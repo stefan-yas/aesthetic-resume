@@ -1,0 +1,61 @@
+---
+const jobs = await Astro.glob("../pages/jobs/*.md");
+---
+
+<h2>Work Experience</h2>
+
+{
+  jobs.map((job) => (
+    <div class="jobs">
+      <section class="inner-section">
+        <div class="title-and-years">
+          <div class="company-name-and-job-title">
+            <h3>
+              <span class="semi-bold">{job.frontmatter.companyName}</span>
+              <span class="medium"> — {job.frontmatter.jobTitle}</span>
+            </h3>
+          </div>
+
+          <p class="years">
+            {job.frontmatter.yearStarted} - {job.frontmatter.yearEnded}
+          </p>
+        </div>
+
+        <p>{job.frontmatter.location}</p>
+
+        <ul class="bullets">
+          {job.frontmatter.experience.map((bullet) => (
+            <li>{bullet}</li>
+          ))}
+        </ul>
+
+        <ul class="tools">
+          {job.frontmatter.tool.map((tool) => (
+            <li class="tool">{tool}</li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  ))
+}
+
+<style>
+  .tools {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+    list-style-type: none;
+  }
+
+  .tool {
+    font-size: 15px;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--tool-text-color);
+    background-color: var(--tool-background-color);
+    padding: 2px;
+    border-radius: var(--border-radius);
+  }
+</style>

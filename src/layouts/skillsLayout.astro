@@ -1,0 +1,40 @@
+---
+const skills = await Astro.glob("../pages/skills/*.md");
+---
+
+<h2>Skills</h2>
+
+<div class="skills">
+  {
+    skills.map((skill) => (
+      <section class="inner-section">
+        <h3>{skill.frontmatter.title}</h3>
+        <ul class="bullets">
+          {skill.frontmatter.listing.map((bullet) => (
+            <li>{bullet}</li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</div>
+
+<style>
+  section {
+    border-top: solid 3px var(--background-color);
+    flex: 1;
+    padding: 15px;
+  }
+
+  h3 {
+    font-weight: 600;
+  }
+
+  .skills {
+    width: 750px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+</style>

@@ -1,0 +1,35 @@
+---
+const schools = await Astro.glob("../pages/education/*.md");
+---
+
+<h2>Education</h2>
+
+{
+  schools.map((school) => (
+    <div class="jobs">
+      <section class="inner-section">
+        <div class="title-and-years">
+          <div class="company-name-and-job-title">
+            <h3>
+              <span class="semi-bold">{school.frontmatter.schoolName}</span>
+            </h3>
+          </div>
+
+          <p class="years">
+            {school.frontmatter.yearStarted} - {school.frontmatter.yearEnded}
+          </p>
+        </div>
+
+        <p>{school.frontmatter.location}</p>
+
+        <h4>{school.frontmatter.degree}</h4>
+      </section>
+    </div>
+  ))
+}
+
+<style>
+  h4 {
+    font-size: 20px;
+  }
+</style>

@@ -1,0 +1,120 @@
+:root {
+  --background-color: #dee2e6;
+  --text-color: #212529;
+  --card-color: #f8f9fa;
+  --font-family: "Inter", sans-serif;
+  --border-radius: 5px;
+  --years-text-color: #343a40;
+  --years-background-color: #ced4da;
+  --tool-text-color: #495057;
+  --tool-background-color: #dee2e6;
+}
+
+/* Resets */
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* General */
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  margin: 2em auto;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 36px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 25px;
+}
+
+h3 {
+  font-size: 23px;
+}
+
+.semi-bold {
+  font-weight: 600;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+/* Layout */
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 90px;
+}
+
+.sections {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+.jobs {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+}
+
+.inner-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.inner-section p {
+  font-style: italic;
+  font-size: 18px;
+}
+
+.title-and-years {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.years {
+  font-style: italic;
+  font-size: 20px;
+  background-color: var(--years-background-color);
+  color: var(--years-text-color);
+  border-radius: var(--border-radius);
+  padding: 2px 5px;
+}
+
+/* Bullets */
+
+.bullets {
+  list-style: inside;
+  line-height: 1.5;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.bullets li {
+  margin: 0;
+  padding: 0;
+  padding-left: 1em;
+}

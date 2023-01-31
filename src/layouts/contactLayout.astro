@@ -1,0 +1,28 @@
+---
+const contacts = await Astro.glob("../pages/contact/*.md");
+---
+
+<h2>Contact</h2>
+
+{
+  contacts.map((contact) => (
+    <section class="inner-section">
+      <a href={contact.frontmatter.href} target="_blank">
+        {contact.frontmatter.linkText}
+      </a>
+    </section>
+  ))
+}
+
+<style>
+  a {
+    color: var(--text-color);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 23px;
+  }
+
+  a:visited {
+    color: var(--text-color);
+  }
+</style>

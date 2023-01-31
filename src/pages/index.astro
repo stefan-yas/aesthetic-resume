@@ -1,0 +1,51 @@
+---
+const title = "Richard Hendriks";
+
+import "../styles/global.css";
+import SectionLayout from "../layouts/sectionLayout.astro";
+import JobsLayout from "../layouts/jobsLayout.astro";
+import EducationLayout from "../layouts/educationLayout.astro";
+import SkillsLayout from "../layouts/skillsLayout.astro";
+import ContactLayout from "../layouts/contactLayout.astro";
+import ImageLayout from "../layouts/imageLayout.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title} | Resume</title>
+  </head>
+  <body id="html">
+    <main>
+      <h1>{title}</h1>
+      <div class="sections">
+        <SectionLayout>
+          <JobsLayout />
+        </SectionLayout>
+
+        <SectionLayout>
+          <EducationLayout />
+        </SectionLayout>
+
+        <SectionLayout>
+          <SkillsLayout />
+        </SectionLayout>
+
+        <SectionLayout>
+          <ContactLayout />
+        </SectionLayout>
+
+        <ImageLayout />
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "@stefan-yas/aesthetic-resume",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npx prettier --write . && astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "npx prettier --write ."
+  },
+  "dependencies": {
+    "astro": "^2.0.4",
+    "puppeteer": "^19.6.2"
+  },
+  "devDependencies": {
+    "prettier": "2.8.3"
+  }
+}

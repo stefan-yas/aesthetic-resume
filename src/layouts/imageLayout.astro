@@ -1,0 +1,17 @@
+---
+const images = await Astro.glob("../pages/image/*.md");
+---
+
+{
+  images.map((image) => (
+    <img src={image.frontmatter.imagePath} alt={image.frontmatter.alt} />
+  ))
+}
+
+<style>
+  img {
+    max-width: 150px;
+    max-height: 50px;
+    mix-blend-mode: overlay;
+  }
+</style>
