@@ -2,7 +2,7 @@
 
 Make beautiful resumes using Astro, Markdown and Puppeteer.
 
-![example-resume](https://github.com/stefan-yas/aesthetic-resume/blob/main/public/screencapture-localhost-3000-2023-01-31-13_09_04.png)
+![example-resume](https://github.com/stefan-yas/aesthetic-resume/blob/main/public/capture.png)
 
 ## Usage
 
@@ -13,9 +13,9 @@ npm i
 npm run dev
 ```
 
-Once you've installed the project dependencies and started the dev server, please go into the `src/pages` folder and edit the `.md` files inside the `contact`, `education`, `image`, `jobs` and `skills` folders.
+Once you've installed the project dependencies and started the dev server, go into the `src/pages` folder and edit the `.md` files inside the `contact`, `education`, `image`, `jobs` and `skills` folders.
 
-Once you've edited your resume, go back to your terminal and type `node downloadAsPdf.js`, and the script will download a .pdf of your page in the project's root folder, titled `resume.pdf`.
+Once you've edited your resume, go back to the terminal and type `node downloadAsPdf.js`. The script will download a .pdf of your resume in the project's root folder, titled `resume.pdf`.
 
 ## Project Structure
 
@@ -24,7 +24,9 @@ Inside of this project, you'll see the following folders and files:
 ```
 /
 ├── public/
+│   └── capture.png
 │   └── favicon.svg
+│   └── piedpiper.png
 ├── src/
 │   └── layouts/
 │       └── contactLayout.astro
@@ -54,7 +56,7 @@ Inside of this project, you'll see the following folders and files:
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory.
 
 ## Commands
 
