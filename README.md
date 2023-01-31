@@ -2,6 +2,8 @@
 
 Make beautiful resumes using Astro, Markdown and Puppeteer.
 
+![example-resume](https://github.com/stefan-yas/aesthetic-resume/blob/main/public/screencapture-localhost-3000-2023-01-31-13_09_04.png)
+
 ## Usage
 
 ```
