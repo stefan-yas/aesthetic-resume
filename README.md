@@ -4,7 +4,7 @@ Make beautiful resumes using Astro, Markdown and Puppeteer.
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/node-xdhtnt?embed=1&file=src/pages/jobs/1-piedpiper.md)
 
-![example-resume](https://github.com/stefan-yas/aesthetic-resume/blob/main/public/capture.png)
+![capture](https://user-images.githubusercontent.com/52251483/216021549-d58d12c8-6f77-4157-aafa-7110b389055d.png)
 
 ## Usage
 
