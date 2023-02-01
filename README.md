@@ -30,11 +30,14 @@ Inside of this project, you'll see the following folders and files:
 │   └── favicon.svg
 │   └── piedpiper.png
 ├── src/
+│   └── components/
+│       └── themeSwitcher.astro
 │   └── layouts/
 │       └── contactLayout.astro
 │       └── educationLayout.astro
 │       └── imageLayout.astro
 │       └── jobsLayout.astro
+│       └── projectsLayout.astro
 │       └── sectionLayout.astro
 │       └── skillsLayout.astro
 │   └── pages/
@@ -45,11 +48,16 @@ Inside of this project, you'll see the following folders and files:
 │       └── image/
 │           └── signature.md
 │       └── jobs/
-│           └── hooli.md
+│           └── 1-hooli.md
+│           └── 2-piedpiper.md
+│       └── projects/
+│           └── piedpiper_copy_copy.md
+│           └── piperchat_copy.md
 │           └── piedpiper.md
+│           └── piperchat.md
 │       └── skills/
-│           └── leadership.md
-│           └── programming.md
+│           └── 1-leadership.md
+│           └── 2-programming.md
 │           └── web3.md
 │       └── index.astro
 │   └── styles/
@@ -76,8 +84,8 @@ All commands are run from the root of the project, from a terminal:
 
 ## To-do
 
-- Order work experience automatically by date
-- ~~Projects section~~ ✅
-- Option for custom links in the contact section
-- Theme support
-- Server-side resume creation, so the user doesn't have to use the command-line
+- Order work experience automatically by date 🌑
+- ~~Projects section~~ 🌕
+- Option for custom links in the contact section 🌑
+- Theme support 🌓
+- Server-side resume creation, so the user doesn't have to use the command-line 🌑
