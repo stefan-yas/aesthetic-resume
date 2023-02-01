@@ -8,6 +8,7 @@ import EducationLayout from "../layouts/educationLayout.astro";
 import SkillsLayout from "../layouts/skillsLayout.astro";
 import ContactLayout from "../layouts/contactLayout.astro";
 import ImageLayout from "../layouts/imageLayout.astro";
+import ProjectsLayout from "../layouts/projectsLayout.astro";
 ---
 
 <html lang="en">
@@ -22,6 +23,10 @@ import ImageLayout from "../layouts/imageLayout.astro";
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <title>{title} | Resume</title>
   </head>
   <body id="html">
@@ -34,6 +39,10 @@ import ImageLayout from "../layouts/imageLayout.astro";
 
         <SectionLayout>
           <EducationLayout />
+        </SectionLayout>
+
+        <SectionLayout>
+          <ProjectsLayout />
         </SectionLayout>
 
         <SectionLayout>

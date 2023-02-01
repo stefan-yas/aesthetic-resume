@@ -77,7 +77,7 @@ All commands are run from the root of the project, from a terminal:
 ## To-do
 
 - Order work experience automatically by date
-- Projects section
+- ~~Projects section~~ ✅
 - Option for custom links in the contact section
 - Theme support
 - Server-side resume creation, so the user doesn't have to use the command-line
