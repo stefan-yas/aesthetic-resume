@@ -1,0 +1,97 @@
+---
+const projects = await Astro.glob("../pages/projects/*.md");
+---
+
+<h2>Projects</h2>
+
+<div class="projects">
+  {
+    projects.map((project) => (
+      <section class="inner-section">
+        <h3>{project.frontmatter.title}</h3>
+        <ul class="bullets">
+          {project.frontmatter.description.map((bullet) => (
+            <li>{bullet}</li>
+          ))}
+        </ul>
+        <div class="project-details">
+          <ul class="stacks">
+            {project.frontmatter.stack.map((stack) => (
+              <li class="stack">{stack}</li>
+            ))}
+          </ul>
+          <a href={project.frontmatter.url} target="_blank">
+            Visit <span class="material-symbols-outlined">open_in_new</span>
+          </a>
+        </div>
+      </section>
+    ))
+  }
+</div>
+
+<style>
+  .inner-section {
+    flex: 1;
+    padding: 15px;
+    justify-content: space-between;
+  }
+
+  section:nth-child(4n + 2),
+  section:nth-child(4n + 3) {
+    background-color: var(--projects-background-color);
+  }
+
+  h3 {
+    font-weight: 600;
+  }
+
+  a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    margin-top: 1em;
+  }
+
+  ul li {
+    font-size: 18px;
+  }
+
+  .projects {
+    width: 750px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 200, "opsz" 48;
+  }
+
+  .stacks {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+    list-style-type: none;
+  }
+
+  .stack {
+    font-size: 15px;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--tool-text-color);
+    background-color: var(--tool-background-color);
+    padding: 2px;
+    border-radius: var(--border-radius);
+  }
+
+  .project-details {
+    display: flex;
+    flex-direction: column;
+  }
+</style>

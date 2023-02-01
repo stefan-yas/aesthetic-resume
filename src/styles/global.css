@@ -8,6 +8,7 @@
   --years-background-color: #ced4da;
   --tool-text-color: #495057;
   --tool-background-color: #dee2e6;
+  --projects-background-color: #EFF1F3;
 }
 
 /* Resets */
@@ -107,7 +108,7 @@ main {
 /* Bullets */
 
 .bullets {
-  list-style: inside;
+  padding-left: 2em;
   line-height: 1.5;
   font-style: normal;
   font-size: 20px;
@@ -116,5 +117,4 @@ main {
 .bullets li {
   margin: 0;
   padding: 0;
-  padding-left: 1em;
 }
