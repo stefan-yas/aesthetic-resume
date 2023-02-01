@@ -1,0 +1,310 @@
+<form class="color-picker" action="">
+  <fieldset>
+    <legend class="hidden">Pick a color</legend>
+    <span class="material-symbols-outlined"> palette</span>
+
+    <label class="hidden" for="theme">Default</label>
+    <input
+      id="default"
+      type="radio"
+      name="theme"
+      class="radio-button"
+      checked
+    />
+
+    <label class="hidden" for="theme">Pink</label>
+    <input id="pink" type="radio" name="theme" class="radio-button" />
+
+    <label class="hidden" for="theme">Purple</label>
+    <input id="purple" type="radio" name="theme" class="radio-button" />
+
+    <label class="hidden" for="theme">Green</label>
+    <input id="green" type="radio" name="theme" class="radio-button" />
+
+    <label class="hidden" for="theme">Blue</label>
+    <input id="blue" type="radio" name="theme" class="radio-button" />
+  </fieldset>
+</form>
+
+<style>
+  .color-picker {
+    position: absolute;
+    top: 2em;
+    right: 2em;
+  }
+
+  .color-picker:hover .radio-button {
+    display: inline-block;
+  }
+  .color-picker:hover .material-symbols-outlined {
+    display: none;
+  }
+
+  .color-picker:hover fieldset {
+    border-radius: var(--border-radius);
+  }
+
+  .hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .color-picker > fieldset {
+    overflow: hidden;
+    border: 0;
+    display: flex;
+    gap: 2rem;
+    width: fit-content;
+    background: #fff;
+    padding: 1rem 1rem;
+    margin-inline: auto;
+    border-radius: 50%;
+  }
+
+  .material-symbols-outlined {
+    display: inline-block;
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 200, "opsz" 48;
+  }
+
+  .color-picker input[type="radio"] {
+    display: none;
+    cursor: pointer;
+    appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    outline: 3px solid var(--radio-color, currentColor);
+    outline-offset: 3px;
+    border-radius: 50%;
+  }
+
+  .material-symbols-outlined:hover ~ .radio-button {
+    display: inline-block;
+  }
+
+  .color-picker input[type="radio"]:checked {
+    background-color: var(--radio-color);
+  }
+
+  .color-picker input[type="radio"]#default {
+    --radio-color: #ced4da;
+  }
+  .color-picker input[type="radio"]#pink {
+    --radio-color: #e2c6db;
+  }
+  .color-picker input[type="radio"]#purple {
+    --radio-color: #d9c6e2;
+  }
+
+  .color-picker input[type="radio"]#green {
+    --radio-color: #c6e2c8;
+  }
+
+  .color-picker input[type="radio"]#blue {
+    --radio-color: #c6d4e1;
+  }
+  /*
+  :root:has(#pink:checked) {
+    --background-color: #ebdbe7;
+    --text-color: #311b2c;
+    --card-color: #faf4f8;
+    --years-text-color: #4b2a43;
+    --years-background-color: #e2c6db;
+    --tool-text-color: #653a5b;
+    --tool-background-color: #ebdbe7;
+    --projects-background-color: #f5ebf3;
+  }
+
+  :root:has(#green:checked) {
+    --background-color: #dbebdb;
+    --text-color: #1b311b;
+    --card-color: #f6faf4;
+    --years-text-color: #2a4b2a;
+    --years-background-color: #c8e2c6;
+    --tool-text-color: #3c653a;
+    --tool-background-color: #dbebdb;
+    --projects-background-color: #edf5eb;
+  }
+
+  :root:has(#purple:checked) {
+    --background-color: #e4dbeb;
+    --text-color: #291b31;
+    --card-color: #f8f4fa;
+    --years-text-color: #402a4b;
+    --years-background-color: #d9c6e2;
+    --tool-text-color: #583a65;
+    --tool-background-color: #e4dbeb;
+    --projects-background-color: #f3ebf5;
+  }
+
+  :root:has(#green:checked) {
+    --background-color: #dbebdb;
+    --text-color: #1b311b;
+    --card-color: #f4faf6;
+    --years-text-color: #2a4b2a;
+    --years-background-color: #c6e2c8;
+    --tool-text-color: #3a653c;
+    --tool-background-color: #dbebdb;
+    --projects-background-color: #ebf5ed;
+  }
+
+  :root:has(#blue:checked) {
+    --background-color: #dae3ec;
+    --text-color: #1b2631;
+    --card-color: #f8fafc;
+    --years-text-color: #2a3b4b;
+    --years-background-color: #c6d4e1;
+    --tool-text-color: #3a4f65;
+    --tool-background-color: #dae3ec;
+    --projects-background-color: #eef2f6;
+  }*/
+</style>
+
+<script>
+  const checkboxes = document.querySelectorAll("input[type='radio']");
+  const root = document.querySelector(":root");
+  const storedTheme = localStorage.getItem("storedTheme");
+
+  if (storedTheme) {
+    switch (storedTheme) {
+      case "default":
+        root.style.setProperty("--background-color", "#dee2e6");
+        root.style.setProperty("--text-color", "#212529");
+        root.style.setProperty("--card-color", "#f8f9fa");
+        root.style.setProperty("--years-text-color", "#343a40");
+        root.style.setProperty("--years-background-color", "#ced4da");
+        root.style.setProperty("--tool-text-color", "#495057");
+        root.style.setProperty("--tool-background-color", "#dee2e6");
+        root.style.setProperty("--projects-background-color", "#eff1f3");
+        break;
+      case "pink":
+        root.style.setProperty("--background-color", "#ebdbe7");
+        root.style.setProperty("--text-color", "#311b2c");
+        root.style.setProperty("--card-color", "#faf4f8");
+        root.style.setProperty("--years-text-color", "#4b2a43");
+        root.style.setProperty("--years-background-color", "#e2c6db");
+        root.style.setProperty("--tool-text-color", "#653a5b");
+        root.style.setProperty("--tool-background-color", "#ebdbe7");
+        root.style.setProperty("--projects-background-color", "#f5ebf3");
+        break;
+      case "purple":
+        root.style.setProperty("--background-color", "#e4dbeb");
+        root.style.setProperty("--text-color", "#291b31");
+        root.style.setProperty("--card-color", "#f8f4fa");
+        root.style.setProperty("--years-text-color", "#402a4b");
+        root.style.setProperty("--years-background-color", "#d9c6e2");
+        root.style.setProperty("--tool-text-color", "#583a65");
+        root.style.setProperty("--tool-background-color", "#e4dbeb");
+        root.style.setProperty("--projects-background-color", "#f3ebf5");
+        break;
+      case "green":
+        root.style.setProperty("--background-color", "#dbebdb");
+        root.style.setProperty("--text-color", "#1b311b");
+        root.style.setProperty("--card-color", "#f6faf4");
+        root.style.setProperty("--years-text-color", "#2a4b2a");
+        root.style.setProperty("--years-background-color", "#c8e2c6");
+        root.style.setProperty("--tool-text-color", "#3c653a");
+        root.style.setProperty("--tool-background-color", "#dbebdb");
+        root.style.setProperty("--projects-background-color", "#edf5eb");
+        break;
+      case "blue":
+        root.style.setProperty("--background-color", "#dae3ec");
+        root.style.setProperty("--text-color", "#1b2631");
+        root.style.setProperty("--card-color", "#f8fafc");
+        root.style.setProperty("--years-text-color", "#2a3b4b");
+        root.style.setProperty("--years-background-color", "#c6d4e1");
+        root.style.setProperty("--tool-text-color", "#3a4f65");
+        root.style.setProperty("--tool-background-color", "#dae3ec");
+        root.style.setProperty("--projects-background-color", "#eef2f6");
+        break;
+    }
+  } else {
+    root.style.setProperty("--background-color", "#dee2e6");
+    root.style.setProperty("--text-color", "#212529");
+    root.style.setProperty("--card-color", "#f8f9fa");
+    root.style.setProperty("--years-text-color", "#343a40");
+    root.style.setProperty("--years-background-color", "#ced4da");
+    root.style.setProperty("--tool-text-color", "#495057");
+    root.style.setProperty("--tool-background-color", "#dee2e6");
+    root.style.setProperty("--projects-background-color", "#eff1f3");
+  }
+
+  for (const checkbox of checkboxes) {
+    if (checkbox.id === storedTheme) {
+      checkbox.checked = true;
+    }
+
+    checkbox.addEventListener("change", function () {
+      if (this.checked) {
+        switch (this.id) {
+          case "default":
+            root.style.setProperty("--background-color", "#dee2e6");
+            root.style.setProperty("--text-color", "#212529");
+            root.style.setProperty("--card-color", "#f8f9fa");
+            root.style.setProperty("--years-text-color", "#343a40");
+            root.style.setProperty("--years-background-color", "#ced4da");
+            root.style.setProperty("--tool-text-color", "#495057");
+            root.style.setProperty("--tool-background-color", "#dee2e6");
+            root.style.setProperty("--projects-background-color", "#eff1f3");
+            break;
+
+          case "pink":
+            root.style.setProperty("--background-color", "#ebdbe7");
+            root.style.setProperty("--text-color", "#311b2c");
+            root.style.setProperty("--card-color", "#faf4f8");
+            root.style.setProperty("--years-text-color", "#4b2a43");
+            root.style.setProperty("--years-background-color", "#e2c6db");
+            root.style.setProperty("--tool-text-color", "#653a5b");
+            root.style.setProperty("--tool-background-color", "#ebdbe7");
+            root.style.setProperty("--projects-background-color", "#f5ebf3");
+            break;
+          case "purple":
+            root.style.setProperty("--background-color", "#e4dbeb");
+            root.style.setProperty("--text-color", "#291b31");
+            root.style.setProperty("--card-color", "#f8f4fa");
+            root.style.setProperty("--years-text-color", "#402a4b");
+            root.style.setProperty("--years-background-color", "#d9c6e2");
+            root.style.setProperty("--tool-text-color", "#583a65");
+            root.style.setProperty("--tool-background-color", "#e4dbeb");
+            root.style.setProperty("--projects-background-color", "#f3ebf5");
+            break;
+          case "green":
+            root.style.setProperty("--background-color", "#dbebdb");
+            root.style.setProperty("--text-color", "#1b311b");
+            root.style.setProperty("--card-color", "#f6faf4");
+            root.style.setProperty("--years-text-color", "#2a4b2a");
+            root.style.setProperty("--years-background-color", "#c8e2c6");
+            root.style.setProperty("--tool-text-color", "#3c653a");
+            root.style.setProperty("--tool-background-color", "#dbebdb");
+            root.style.setProperty("--projects-background-color", "#edf5eb");
+            break;
+          case "blue":
+            root.style.setProperty("--background-color", "#dae3ec");
+            root.style.setProperty("--text-color", "#1b2631");
+            root.style.setProperty("--card-color", "#f8fafc");
+            root.style.setProperty("--years-text-color", "#2a3b4b");
+            root.style.setProperty("--years-background-color", "#c6d4e1");
+            root.style.setProperty("--tool-text-color", "#3a4f65");
+            root.style.setProperty("--tool-background-color", "#dae3ec");
+            root.style.setProperty("--projects-background-color", "#eef2f6");
+            break;
+        }
+      } else {
+        root.style.setProperty("--background-color", "#dee2e6");
+        root.style.setProperty("--text-color", "#212529");
+        root.style.setProperty("--card-color", "#f8f9fa");
+        root.style.setProperty("--years-text-color", "#343a40");
+        root.style.setProperty("--years-background-color", "#ced4da");
+        root.style.setProperty("--tool-text-color", "#495057");
+        root.style.setProperty("--tool-background-color", "#dee2e6");
+        root.style.setProperty("--projects-background-color", "#eff1f3");
+      }
+
+      localStorage.setItem("storedTheme", this.id);
+    });
+  }
+</script>
